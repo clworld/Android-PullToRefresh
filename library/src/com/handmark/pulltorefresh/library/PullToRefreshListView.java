@@ -62,6 +62,17 @@ public class PullToRefreshListView extends PullToRefreshAdapterViewBase<ListView
 		return Orientation.VERTICAL;
 	}
 
+	public void setTextColorSimple(int color) {
+		super.setTextColorSimple(color);
+		if(this.mHeaderLoadingView != null) {
+			this.mHeaderLoadingView.setTextColorSimple(color);
+		}
+
+		if(this.mFooterLoadingView != null) {
+			this.mFooterLoadingView.setTextColorSimple(color);
+		}
+	}
+
 	@Override
 	protected void onRefreshing(final boolean doScroll) {
 		/**

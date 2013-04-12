@@ -985,6 +985,16 @@ public abstract class PullToRefreshBase<T extends View> extends LinearLayout imp
 		}
 	}
 
+	public void setTextColorSimple(int color) {
+		if(this.mHeaderLayout != null) {
+			this.mHeaderLayout.setTextColorSimple(color);
+		}
+
+		if(this.mFooterLayout != null) {
+			this.mFooterLayout.setTextColorSimple(color);
+		}
+	}
+
 	/**
 	 * Smooth Scroll to position using the default duration of
 	 * {@value #SMOOTH_SCROLL_DURATION_MS} ms.
@@ -1300,7 +1310,7 @@ public abstract class PullToRefreshBase<T extends View> extends LinearLayout imp
 		FLIP;
 
 		static AnimationStyle getDefault() {
-			return ROTATE;
+			return FLIP; // TODO: Set from stylable
 		}
 
 		/**
